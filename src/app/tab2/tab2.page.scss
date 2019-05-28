@@ -1,1 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
+.profile{
+    width: 150px;
+    height: 150px;
+}
+
+p{
+    padding-left: 10px;
+}
+
+h1.padded{
+    padding-left: 15px;
+}
+
+.main-button{
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: 'Roboto', sans-serif;
+    text-transform: none;
+}
+
+ion-content{
+    font-family: 'Roboto', sans-serif;
+}
+
+ion-toolbar{
+    --background: #3880ff;
+    --color: #fff;
+  }

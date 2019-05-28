@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Profile
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div align="center" class="ion-padding">
+    <ion-avatar class="profile">
+      <img src="assets/Eric.jpg">
+    </ion-avatar>
+    <h1 text-center class="padded"><b>Hi, I'm Eric</b></h1> 
+  </div>
+  <div>
+    <ion-card>
+      <p><b>About</b></p>
+      <ion-item>
+      <p><ion-icon name="home"></ion-icon>
+        Lives in Toronto, Canada
+      </p>
+      </ion-item>
+      <ion-item>
+      <p><ion-icon name="send"></ion-icon>
+        ez.zhao@mail.utoronto.ca
+      </p>
+      </ion-item>
+      <ion-item>
+      <p><ion-icon name="call"></ion-icon>
+        +1 647-330-1891
+      </p>
+      </ion-item>
+      <ion-item>
+      <p><ion-icon name="bookmark"></ion-icon>
+        3 bookings
+      </p>
+      </ion-item>
+    </ion-card> 
+    <ion-card>
+      <p><b>Reviews (2)</b></p>
+      <ion-list>
+        <ion-item>
+        <p><ion-icon name="star"></ion-icon>
+          <ion-icon name="star"></ion-icon>
+          <ion-icon name="star"></ion-icon>
+          <ion-icon name="star"></ion-icon>
+          <ion-icon name="star-outline"></ion-icon>
+        Pretty nice.</p>
+        </ion-item>
+        <ion-item>
+        <p><ion-icon name="star"></ion-icon>
+          <ion-icon name="star"></ion-icon>
+          <ion-icon name="star"></ion-icon>
+          <ion-icon name="star"></ion-icon>
+          <ion-icon name="star"></ion-icon>
+        Cleaned up everything!</p>
+        </ion-item>
+      </ion-list> 
+    </ion-card>
+    <ion-button class="main-button" expand="block" (click)="goLog()">Log Out</ion-button>
+  </div>
+</ion-content>

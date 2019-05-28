@@ -1,4 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
 .welcome-card ion-img {
-  max-height: 35vh;
+  max-height: 75vh;
   overflow: hidden;
+}
+.profile{
+  width: 150px;
+  height: 150px;
+}
+
+p{
+  padding-left: 10px;
+}
+
+h1.padded{
+  padding-left: 10px;
+}
+
+ion-content{
+  font-family: 'Roboto', sans-serif;
+}
+
+ion-toolbar{
+  --background: #3880ff;
+  --color: #fff;
 }

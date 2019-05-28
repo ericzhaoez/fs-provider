@@ -1,9 +1,29 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab Three
+      Trips
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+  <div class="ion-padding">
+    <ion-card>
+      <p><b>No upcoming trips</b></p>
+      <p>Start exploring ideas for your next trip</p>
+      <ion-button class="main-button" expand="block" (click)="goHome()"> 
+          Explore Not-Airbnb
+        </ion-button>
+    </ion-card>
+    <ion-card>
+      <p><b>Current trips</b></p>
+      <ion-list>
+        <ion-item>
+        <p><img class="preview" src="assets/portugal.jpg"></p>
+          <p><b>Lisbon, Portugal</b></p>
+          <ion-button class="main-button" expand="block" (click)="goListing()">View</ion-button>
+        </ion-item>
+      </ion-list>
+    </ion-card>
+  </div>
+</ion-content>
