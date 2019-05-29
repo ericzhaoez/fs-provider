@@ -14,8 +14,8 @@ h1.padded{
 }
 
 .preview{
-    max-width: 250px;
-    border-radius: 10px;
+    width: 150px;
+    height: 150px;
 }
 
 .main-button{
@@ -27,6 +27,17 @@ h1.padded{
 
 ion-content{
     font-family: 'Roboto', sans-serif;
+}
+
+ion-avatar.past{
+    padding: 7px;
+    width: 100px;
+    height: 100px;
+}
+
+ion-avatar.current{
+    width: 400px;
+    height: 400px;
 }
 
 ion-toolbar{

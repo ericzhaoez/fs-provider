@@ -19,9 +19,22 @@
       <p><b>Current trips</b></p>
       <ion-list>
         <ion-item>
-        <p><img class="preview" src="assets/portugal.jpg"></p>
-          <p><b>Lisbon, Portugal</b></p>
+        <ion-avatar class="preview">
+          <img src="assets/portugal.jpg">
+        </ion-avatar>
+          <p><b>{{currentRental.city}}</b>, {{currentRental.country}} ({{currentRental.duration}} days)</p>
           <ion-button class="main-button" expand="block" (click)="goListing()">View</ion-button>
+        </ion-item>
+      </ion-list>
+    </ion-card>
+    <ion-card>
+      <p><b>Past trips</b></p>
+      <ion-list>
+        <ion-item *ngFor="let rental of rentals">
+            <ion-avatar class="past">
+                <img src="{{rental.cityimage}}">
+              </ion-avatar>
+              <b>{{rental.city}}</b>, {{rental.country}} ({{rental.duration}} days)
         </ion-item>
       </ion-list>
     </ion-card>
