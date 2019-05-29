@@ -10,8 +10,6 @@ export class Review {
 
     public setWordreview(wordreview:string){
         this.wordreview = wordreview;
-        this.author = author;
-        this.avatar = avatar;
     
     }
     
