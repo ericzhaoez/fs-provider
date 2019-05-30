@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Saved
+      Create a New Rental
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,10 +9,46 @@
 <ion-content>
   <div class="ion-padding">
     <ion-card>
-      <p>Not every day is filled with adventure, but you can start planning for the next one. Tap the bookmark on any home to start saving your favourites here. This is totally original text.</p>
-      <ion-button class="main-button" expand="block" (click)="goHome()"> 
-          Find homes
-        </ion-button>
+      <p><b>Enter details below</b></p>
+      <p>
+        <ion-list>
+          <ion-item>
+            <ion-label color="primary">Rental Name</ion-label>
+            <ion-input placeholder="Name"></ion-input>
+          </ion-item>
+        
+          <ion-item>
+            <ion-label color="primary" stacked>Rental Address</ion-label>
+            <ion-input placeholder="Address Line 1"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-input placeholder="(Optional) Address Line 2" clearInput></ion-input>
+          </ion-item>
+        
+          <ion-item>
+            <ion-label color="primary" stacked>Price/Night: $</ion-label>
+            <ion-input type="number" placeholder="Amount"></ion-input>
+          </ion-item>
+        
+          <ion-item>
+            <ion-label color="primary" stacked>Contact Email</ion-label>
+            <ion-input type="email" placeholder="you@email.com"></ion-input>
+          </ion-item>
+
+          <ion-item>
+              <ion-label color="primary" stacked>Contact Number</ion-label>
+              <ion-input type="tel" placeholder="(123) 456-7890"></ion-input>
+            </ion-item>
+        
+          <ion-item>
+            <ion-textarea placeholder="Enter a description (features, amenities, check-in)"></ion-textarea>
+          </ion-item>
+        </ion-list>
+      </p>
     </ion-card>
+    <ion-button class="main-button" expand="block" (click)="goToast()"> 
+        Submit
+      </ion-button>
     </div>
 </ion-content>

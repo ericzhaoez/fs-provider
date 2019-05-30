@@ -1,21 +1,17 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Trips
+      View or Update Existing Rentals
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <div class="ion-padding">
-    <ion-card>
-      <p><b>No upcoming trips</b></p>
-      <p>Start exploring ideas for your next trip</p>
-      <ion-button class="main-button" expand="block" (click)="goHome()"> 
-          Explore Not-Airbnb
-        </ion-button>
-    </ion-card>
-    <ion-card>
+    <ion-button class="main-button" expand="block" (click)="goCreate()"> 
+        Create a new rental
+      </ion-button>
+    <!-- <ion-card>
       <p><b>Current trips</b></p>
       <ion-list>
         <ion-item>
@@ -26,15 +22,16 @@
           <ion-button class="main-button" expand="block" (click)="goListing()">View</ion-button>
         </ion-item>
       </ion-list>
-    </ion-card>
+    </ion-card> -->
     <ion-card>
-      <p><b>Past trips</b></p>
+      <p><b>Active Rentals List</b></p>
       <ion-list>
         <ion-item *ngFor="let rental of rentals">
             <ion-avatar class="past">
                 <img src="{{rental.cityimage}}">
               </ion-avatar>
               <b>{{rental.city}}</b>, {{rental.country}} ({{rental.duration}} days)
+              <ion-button class="main-button" expand="block" (click)="goRental1()">View or Edit</ion-button>
         </ion-item>
       </ion-list>
     </ion-card>

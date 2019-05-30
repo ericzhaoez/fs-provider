@@ -51,14 +51,16 @@ export class Tab3Page {
   
     }
 
-  goHome() {
-    this.navCtrl.navigateForward('tabs');
+  goCreate() {
+    this.navCtrl.navigateForward('tabs/tab2');
   }
 
   goListing() {
     this.navCtrl.navigateForward('rental-details');
   }
-  
+
+  goRental1() {
+    this.navCtrl.navigateForward('rental1');
 }
 
-
+}
