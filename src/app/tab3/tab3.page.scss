@@ -25,6 +25,10 @@ h1.padded{
     text-transform: none;
 }
 
+ion-item:hover{
+    --background: lightgrey;
+}
+
 ion-content{
     font-family: 'Roboto', sans-serif;
 }

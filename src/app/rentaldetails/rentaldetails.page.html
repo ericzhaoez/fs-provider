@@ -3,17 +3,19 @@
       <ion-buttons slot="start">
           <ion-back-button></ion-back-button>
         </ion-buttons>
-    <ion-title>Cancel Edit</ion-title>
+    <ion-title (click)="goRentals()">Cancel</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <div align="center" class="ion-padding">
       <ion-avatar class="profile">
-        <img src="{{rental1.cityimage}}">
+        <img src="{{currentRental.cityimage}}">
       </ion-avatar>
-      <!-- <h1 text-center class="padded"><b>{{rental1.city}}, {{rental1.country}}</b></h1>  -->
-      <h1 text-center class="padded"><b>Existing Rental</b></h1>
+      <!-- <h1 text-center class="padded"><b>{{currentRental.city}}, {{currentRental.country}}</b></h1>  -->
+      <h1 *ngIf="currentRental" class="padded" text-center><b>{{currentRental.city}}</b>, {{currentRental.country}}</h1>
+      <p>${{currentRental.price}} per night</p>
+      <p><i>[Description TBC]</i></p>
     </div>
     <div class="ion-padding">
         <ion-card>

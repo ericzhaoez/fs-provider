@@ -10,3 +10,15 @@ ion-button{
     font-family: 'Roboto', sans-serif;
     text-transform: none;
 }
+
+ion-button.cancel{
+    --background:rgba(0,0,0,.15);
+    font-family: 'Roboto', sans-serif;
+    text-transform: none;
+}
+
+ion-button.cancel:hover{
+    --background: #062f77;
+    font-family: 'Roboto', sans-serif;
+    text-transform: none;
+}

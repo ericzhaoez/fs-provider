@@ -26,12 +26,12 @@
     <ion-card>
       <p><b>Active Rentals List</b></p>
       <ion-list>
-        <ion-item *ngFor="let rental of rentals">
+        <ion-item *ngFor="let rental of rentals" (click)="goRentals(rental)">
             <ion-avatar class="past">
                 <img src="{{rental.cityimage}}">
               </ion-avatar>
-              <b>{{rental.city}}</b>, {{rental.country}} ({{rental.duration}} days)
-              <ion-button class="main-button" expand="block" (click)="goRental1()">View or Edit</ion-button>
+              <b>{{rental.city}}</b>, {{rental.country}} (${{rental.price}}/night)
+              <ion-button class="main-button" expand="block" (click)="goRentals(rental)">View or Edit</ion-button>
         </ion-item>
       </ion-list>
     </ion-card>
