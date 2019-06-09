@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { NavController, ToastController } from '@ionic/angular';
 import { User, Rental } from '../models';
+import { HttpClient } from "@angular/common/http";
 import { RentalService } from '../services/rental.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -11,6 +12,13 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class RentaldetailsPage implements OnInit {
 
+    public property: any = {
+      name: "",
+      location: "",
+      imageUrl: "",
+      price: ""
+    };
+
     private id: number;
     public city: string;
     public currentRental: Rental;
@@ -20,48 +28,61 @@ export class RentaldetailsPage implements OnInit {
     public rentals: Array<Rental>;
   
     constructor(
-      private  navCtrl:  NavController,
+      private httpClient: HttpClient,
+      private navCtrl:  NavController,
       private activatedRoute: ActivatedRoute,
-      private rentalService: RentalService
+      private rentalService: RentalService,
+      private toastController: ToastController
       ) {
 
     this.rentalService.getAllRentals();
     this.rentals = this.rentalService.rentals;
-  
-    this.rentaldetails = new Rental();
-    this.rentaldetails.city = "Tel Aviv";
-    this.rentaldetails.country = "Israel";
-    this.rentaldetails.duration = 30;
-    this.rentaldetails.cityimage = "https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/07/05/11/tel-aviv-jaffa.jpg?w968h681";
+
+      }
+
+      submit() {
+        console.log("Submitting to the server...");
+        console.log(this.property);
     
-  //   let rental1 = new Rental();
-  //     rental1.id = 1;
-  //     rental1.city = "Tel Aviv";
-  //     rental1.country = "Israel";
-  //     rental1.duration = 30;
-  //     rental1.price = 300;
-
-  // let rental2 = new Rental();
-  //     rental2.id = 2;
-  //     rental2.city = "Berlin";
-  //     rental2.country = "Germany";
-  //     rental2.duration = 18;
-  //     rental2.price = 260;
-
-  // let rental3 = new Rental();
-  //     rental3.id = 3;
-  //     rental3.city = "Cape Town";
-  //     rental3.country = "South Africa";
-  //     rental3.duration = 4;
-  //     rental3.price = 310;
-
-  // let rental4 = new Rental();
-  //     rental4.id = 4;
-  //     rental4.city = "Sydney";
-  //     rental4.country = "Australia";
-  //     rental4.duration = 10;
-  //     rental4.price = 280;
-
+        this.httpClient
+          .post("http://localhost:3000/api/properties", this.property)
+          .subscribe(
+            (response: any) => {
+              console.log(response);
+              this.navCtrl.navigateForward('tabs/tab3', {
+                // queryParams: {
+                //   propertyId: response.id
+                // }
+              });
+              this.goToast();
+            },
+            (err) => {
+              console.log(err);
+              // this.goAlert(err.error.message);
+            }
+          );
+      }
+    
+      goHome() {
+        this.navCtrl.navigateForward('tabs');
+      }
+    
+      async goToast() {
+        const toast = await this.toastController.create({
+          header: 'Thank you for your submission!',
+          duration: 5000,
+          position: 'top',
+          // buttons: [
+          //   {
+          //     text: 'Hide',
+          //     role: 'cancel',
+          //     handler: () => {
+          //       console.log('Cancel clicked');
+          //     }
+          //   }
+          // ]
+        });
+        toast.present();
       }
 
     ngOnInit() {
@@ -110,8 +131,6 @@ export class RentaldetailsPage implements OnInit {
     
     goRentals() {
       this.navCtrl.navigateForward('tabs/tab3');
+      this.goToast();
     }
-
-}
-  
-
+  }

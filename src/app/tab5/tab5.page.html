@@ -9,33 +9,34 @@
 <ion-content>
   <div align="center" class="ion-padding">
     <ion-avatar class="profile">
-      <img src="assets/Eric.jpg">
+      <img src="assets/default.png">
     </ion-avatar>
-    <h1 text-center class="padded"><b>Hi, I'm {{currentUser.firstname}}</b></h1> 
+    <h1 text-center class="padded"><b>Hi, I'm {{user.firstname}}</b></h1> 
   </div>
   <div>
     <ion-card>
+      <!-- <P>Name: {{user.firstname}} {{user.lastname}}, Email: {{user.email}}</P> -->
       <p><b>About</b></p>
       <ion-item>
       <p><ion-icon name="home"></ion-icon>
-        Lives in {{currentUser.city}}, {{currentUser.country}}
+        {{user.firstname}} {{user.lastname}}
       </p>
       </ion-item>
       <ion-item>
       <p><ion-icon name="send"></ion-icon>
-        {{currentUser.email}}
+        {{user.email}}
       </p>
       </ion-item>
-      <ion-item>
+      <!-- <ion-item>
       <p><ion-icon name="call"></ion-icon>
         {{currentUser.phone}}
       </p>
-      </ion-item>
-      <ion-item>
+      </ion-item> -->
+      <!-- <ion-item>
       <p><ion-icon name="bookmark"></ion-icon>
         {{currentUser.bookings}} bookings
       </p>
-      </ion-item>
+      </ion-item> -->
     </ion-card> 
     <ion-card>
       <p><b>Reviews (3)</b></p>

@@ -11,43 +11,34 @@
     <ion-card>
       <p><b>Enter details below</b></p>
       <p>
-        <ion-list>
-          <ion-item>
-            <ion-label color="primary">Rental Name</ion-label>
-            <ion-input placeholder="Name"></ion-input>
-          </ion-item>
-        
-          <ion-item>
-            <ion-label color="primary" stacked>Rental Address</ion-label>
-            <ion-input placeholder="Address Line 1"></ion-input>
-          </ion-item>
-
-          <ion-item>
-            <ion-input placeholder="(Optional) Address Line 2" clearInput></ion-input>
-          </ion-item>
-        
-          <ion-item>
-            <ion-label color="primary" stacked>Price/Night: $</ion-label>
-            <ion-input type="number" placeholder="Amount"></ion-input>
-          </ion-item>
-        
-          <ion-item>
-            <ion-label color="primary" stacked>Contact Email</ion-label>
-            <ion-input type="email" placeholder="your@email.com"></ion-input>
-          </ion-item>
-
-          <ion-item>
-              <ion-label color="primary" stacked>Contact Number</ion-label>
-              <ion-input type="tel" placeholder="+ (123) 456-7890"></ion-input>
-            </ion-item>
-        
-          <ion-item>
-            <ion-textarea placeholder="Enter a description (features, amenities, check-in)"></ion-textarea>
-          </ion-item>
-        </ion-list>
+          <ion-list>
+              <ion-item>
+                <ion-label color="primary">Rental Name</ion-label>
+                <ion-input placeholder="Name" [(ngModel)]="property.name"></ion-input>
+              </ion-item>
+            
+              <ion-item>
+                <ion-label color="primary" stacked>Rental Address</ion-label>
+                <ion-input placeholder="Address" [(ngModel)]="property.location"></ion-input>
+              </ion-item>
+    
+              <ion-item>
+                <ion-label color="primary" stacked>Link to Image</ion-label>
+                <ion-input placeholder="Image URL" [(ngModel)]="property.imageUrl"></ion-input>
+              </ion-item>
+            
+              <ion-item>
+                <ion-label color="primary" stacked>Price/Night: $</ion-label>
+                <ion-input type="number" placeholder="Amount" [(ngModel)]="property.price"></ion-input>
+              </ion-item>
+            
+              <ion-item>
+                <ion-textarea placeholder="Enter a description (features, amenities, check-in)"></ion-textarea>
+              </ion-item>
+            </ion-list>
       </p>
     </ion-card>
-    <ion-button class="main-button" expand="block" (click)="goToast()"> 
+    <ion-button class="main-button" expand="block" (click)="submit()"> 
         Submit
       </ion-button>
     </div>
